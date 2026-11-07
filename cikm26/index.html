@@ -69,6 +69,7 @@
 
   <ul class="links" id="links">
     <li id="li-paper"></li>
+    <li id="li-acm"></li>
     <li id="li-deck"></li>
     <li id="li-demo" hidden></li>
     <li><a class="row" href="https://dreamgroup.com" target="_blank" rel="noopener"><span class="t"><span class="name">Dream</span><span class="note">AI for national cyber defense · dreamgroup.com</span></span><span class="arrow" aria-hidden="true">→</span></a></li>
@@ -88,6 +89,7 @@
   // Fill these as they become available. null = not yet.
   var LINKS = {
     paper: "https://arxiv.org/abs/2611.03434",
+    acm:   "https://dl.acm.org/doi/10.1145/3799682.3839256",
     deck:  "https://dreamgroupai-ai.github.io/cikm26/deck/",                     // the deck's public link (Share menu of the slides)
     demo:  null                      // e.g. a video link; stays hidden while null
   };
@@ -105,8 +107,11 @@
 
   var paper = document.getElementById('li-paper');
   paper.innerHTML = LINKS.paper
-    ? row(LINKS.paper, 'The paper', 'arXiv:2611.03434 · 3 pages · in Proceedings of CIKM ’26')
+    ? row(LINKS.paper, 'The paper', 'arXiv:2611.03434 · preprint, free PDF')
     : off('The paper', 'Preprint coming to arXiv · until then, email Shai for a copy');
+
+  var acm = document.getElementById('li-acm');
+  if (LINKS.acm) { acm.innerHTML = row(LINKS.acm, 'Published version', 'ACM Digital Library · CIKM ’26 proceedings · doi:10.1145/3799682.3839256'); }
 
   var deck = document.getElementById('li-deck');
   var now = new Date();
